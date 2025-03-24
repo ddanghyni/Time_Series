@@ -49,7 +49,6 @@ def plot_random_variation_time_series(alpha=0.0, length=100, noise_std=1.0, seed
 #%%
 def plot_seasonal_time_series(alpha=0.0, beta1=1.0, beta=1.0, f=12, length=50, noise_std=1.0, seed=None):
 
-    # 시드 고정 (옵션)
     if seed is not None:
         np.random.seed(seed)
 
@@ -68,7 +67,6 @@ def plot_seasonal_time_series(alpha=0.0, beta1=1.0, beta=1.0, f=12, length=50, n
     # 최종 시계열: y_t = alpha + (seasonal part) + e_t
     y = alpha + seasonal_component + noise
 
-    # --- Plotly 시각화 ---
     fig = go.Figure()
 
     # (1) 실제 시계열 (points + line)
